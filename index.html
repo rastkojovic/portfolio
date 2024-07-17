@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rastko Jović | Frontend Developer</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="autoCarousel()">
+    <header>
+      <div class="navbar">
+        <div class="logo-container">
+          <img src="./resources/images/logo.png" class="logo" />
+          <p>Rastko Jović</p>
+        </div>
+        <!-- Replace with actual logo -->
+        <div id="my-links">
+          <hr />
+          <a href="#home" onclick="toggleHamburgerMenu()">Home</a>
+          <hr />
+          <a href="#about" onclick="toggleHamburgerMenu()">About</a>
+          <hr />
+          <a href="#projects" onclick="toggleHamburgerMenu()">Projects</a>
+          <hr />
+          <a href="#contact" onclick="toggleHamburgerMenu()">Contact</a>
+        </div>
+        <a
+          href="javascript:void(0);"
+          id="hamburger-icon"
+          onclick="toggleHamburgerMenu()"
+          >☰</a
+        >
+      </div>
+    </header>
+    <main>
+      <section id="home">
+        <div class="title">
+          <h1><span class="blinking-cursor">|</span></h1>
+        </div>
+      </section>
+      <section id="about">
+        <h2>ABOUT ME</h2>
+        <hr />
+        <p>
+          Aspiring Front-End Developer | HTML, CSS, JavaScript Enthusiast |
+          Focused on Creating Responsive and User-Friendly Websites
+        </p>
+        <div class="about-me-group">
+          <!-- <img src="./resources/images/profile.png"> -->
+          <div class="get-to-know-me">
+            <h3>Get to know me!</h3>
+            <p>
+              With a solid foundation in <span>HTML, CSS, and JavaScript</span>,
+              I am passionate about creating responsive, user-friendly websites
+              and continuously learning to enhance my skills. Currently
+              completing a Front-End Development Bootcamp to further my
+              knowledge and prepare for a career in web development. With a
+              background in technical support and customer service, I have honed
+              my problem-solving abilities, attention to detail, and ability to
+              thrive in fast-paced environments. My experience includes:
+              Conducting manual <span>QA testing for mobile applications</span>,
+              providing technical support and troubleshooting for a variety of
+              hardware and software issues, collaborating with teams to ensure
+              smooth project execution and customer satisfaction. I am eager to
+              leverage my technical skills and customer-oriented approach in a
+              dynamic development role.
+              <span
+                >Let's connect and discuss how I can contribute to your
+                team!</span
+              >
+            </p>
+            <a href="#contact">CONTACT</a>
+          </div>
+          <div class="my-skills">
+            <h3>My Skills</h3>
+            <div class="skills">
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>SASS</div>
+              <div>JavaScript</div>
+              <div>React</div>
+              <div>GIT</div>
+              <div>Responsive Design</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>PROJECTS</h2>
+        <hr />
+        <p>
+          Here are a few examples of my projects made with a focus on responsive
+          design.
+        </p>
+
+        <div class="slideshow-container">
+          <div class="previous" onclick="plusSlides(-1)"><p>&#10094;</p></div>
+          <article class="fauget-furniture slide fade">
+            <img
+              src="./resources/images/furniture store.png"
+              alt="Fauget Furniture Store Website"
+            />
+            <div class="about-project">
+              <h3>Fauget Furniture Store <span>(PLACEHOLDER)</span></h3>
+              <p>
+                For Fauget Furniture Store, I created a visually stunning
+                e-commerce platform that highlights their unique, artisanal
+                furniture pieces.
+              </p>
+              <button type="button">LIVE DEMO</button>
+            </div>
+          </article>
+          <article class="paueek-health-food slide fade">
+            <img
+              src="./resources/images/health food store.png"
+              alt="Paueek and Large Health Food Store Website"
+            />
+            <div class="about-project">
+              <h3>Paueek and Large Health Food Store <span>(PLACEHOLDER)</span></h3>
+              <p>
+                The Paieek and Large Healthfood Store website was designed to
+                reflect the company's commitment to organic, sustainable
+                products and healthy living.
+              </p>
+              <button type="button">LIVE DEMO</button>
+            </div>
+          </article>
+          <article class="manes-winchester-lawfirm slide fade">
+            <img
+              src="./resources/images/law firm.png"
+              alt="Manes Winchester Lawfirm Website"
+            />
+            <div class="about-project">
+              <h3>Manes Winchester Lawfirm <span>(PLACEHOLDER)</span></h3>
+              <p>
+                I developed a sleek, professional website for Manes Winchester
+                Law Firm that showcases their expertise in corporate law and
+                litigation.
+              </p>
+              <button type="button">LIVE DEMO</button>
+            </div>
+          </article>
+          <div class="next" onclick="plusSlides(1)"><p>&#10095;</p></div>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>CONTACT</h2>
+        <hr />
+        <p>
+          I'd love to hear from you! Whether you have questions, feedback, or
+          would like to discuss a potential project, please don't hesitate to
+          get in touch using the form below. I am committed to responding
+          promptly and providing the assistance you need. I look forward to
+          connecting with you soon.
+        </p>
+        <form>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Enter Your Name" />
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Enter Your Email" />
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Enter Your Message"></textarea>
+
+          <button type="submit">SUBMIT</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-elements">
+        <div class="left">
+          <h3>RASTKO JOVIĆ</h3>
+          <p>
+            I'm a Frontend Web Developer specializing in crafting engaging and
+            effective user interfaces for websites and web applications. My
+            focus is on creating seamless frontend experiences that contribute
+            significantly to the overall success of digital products.
+          </p>
+        </div>
+        <div class="right">
+          <h3>SOCIAL</h3>
+          <a href="https://www.linkedin.com/in/rastko-jovic/">
+            <img
+              src="./resources/icons/icons8-linkedin-250-white.png"
+              alt="LinkedIn Logo"
+            /> </a
+          ><a href="https://github.com/rastkojovic">
+            <img
+              src="./resources/icons/icons8-github-256-white.png"
+              alt="GitHub Logo"
+            /> </a
+          ><a href="https://x.com/jovic_rastko">
+            <img
+              src="./resources/icons/icons8-twitter-logo-250.png"
+              alt="Twitter Logo"
+            />
+          </a>
+        </div>
+      </div>
+
+      <hr />
+      <p class="copyright">&copy; Copyright 2024. Made by Rastko Jović</p>
+    </footer>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+    <script type="text/javascript" src="./scripts/carousel-main.js"></script>
+    <script type="text/javascript" src="./scripts/typewritter-effect.js"></script>
+  </body>
+</html>
