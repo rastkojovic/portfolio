@@ -225,7 +225,7 @@ body main #about hr {
   width: 20px;
   margin: auto;
   border-radius: 5px;
-  background-color: #2f5edf;
+  background-color: #4c677f;
 }
 body main #about p:first-of-type {
   text-align: center;
@@ -244,7 +244,7 @@ body main #about .get-to-know-me p span {
   color: #4c677f;
 }
 body main #about .get-to-know-me a {
-  background-color: #2f5edf;
+  background-color: #4c677f;
   color: white;
   border: none;
   border-radius: 5px;
@@ -261,7 +261,7 @@ body main #about .get-to-know-me a {
   margin-bottom: 50px;
 }
 body main #about .get-to-know-me a:hover {
-  background-color: #173eaa;
+  background-color: #314e68;
   animation-name: grow-shrink;
   animation-duration: 0.5s;
 }
@@ -334,7 +334,8 @@ body main #projects hr {
   width: 20px;
   margin: auto;
   border-radius: 5px;
-  background-color: #2f5edf;
+  background-color: #4c677f;
+  background-color: #1d1d1d;
 }
 body main #projects p:first-of-type {
   margin-bottom: 70px;
@@ -382,7 +383,7 @@ body main #projects .slideshow-container .previous {
   font-weight: bold;
   width: 30px;
   height: 30px;
-  background-color: #2f5edf;
+  background-color: #1d1d1d;
   border: none;
   border-radius: 50%;
   display: flex;
@@ -393,7 +394,8 @@ body main #projects .slideshow-container .previous {
 }
 body main #projects .slideshow-container .next:hover,
 body main #projects .slideshow-container .previous:hover {
-  background-color: #173eaa;
+  background-color: #000000;
+  transform: scale(105%);
 }
 body main #projects .slideshow-container .next p,
 body main #projects .slideshow-container .previous p {
@@ -434,7 +436,7 @@ body main #projects article .about-project p {
   line-height: 1.7rem;
 }
 body main #projects article button {
-  background-color: #2f5edf;
+  background-color: #4c677f;
   color: white;
   border: none;
   border-radius: 5px;
@@ -480,7 +482,7 @@ body main #contact hr {
   width: 20px;
   margin: auto;
   border-radius: 5px;
-  background-color: #2f5edf;
+  background-color: #4c677f;
 }
 body main #contact p {
   text-align: center;
@@ -515,7 +517,7 @@ body main #contact form textarea {
   height: 180px;
 }
 body main #contact form button {
-  background-color: #2f5edf;
+  background-color: #4c677f;
   color: white;
   border: none;
   border-radius: 5px;
@@ -528,7 +530,7 @@ body main #contact form button {
 body main #contact form button:hover {
   animation-name: grow-shrink-smaller;
   animation-duration: 0.5s;
-  background-color: #173eaa;
+  background-color: #314e68;
 }
 @media (max-width: 768px) {
   body main #contact form {
@@ -593,5 +595,8 @@ body footer .copyright {
   }
   body footer .right {
     margin-bottom: 50px;
+  }
+  body footer .right a {
+    text-decoration: none;
   }
 }/*# sourceMappingURL=style.css.map */

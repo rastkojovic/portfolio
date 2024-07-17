@@ -5,10 +5,11 @@ $header-text-color: #818080;
 $background-color-dark: #1d1d1d;
 $background-color-gradient: linear-gradient(45deg, #2c3e50, #4c677f);
 $navbar-background: #111111;
-$heading-hr-bg-color: #2f5edf;
-$button-background-color: #2f5edf;
+$heading-hr-bg-color: #4c677f;
+$heading-hr-bg-color-dark:#1d1d1d;
+$button-background-color: #4c677f;
 $blue-text-color: #4c677f;
-$button-hover-color: #173eaa;
+$button-hover-color: #314e68;
 $button-dark-bg-color: #1d1d1d;
 $button-dark-hover-color: #111111;
 $burger-dropdown-hover-color: #302f2f;
@@ -406,6 +407,7 @@ body {
 
       hr {
         @include heading-hr-style();
+        background-color: $heading-hr-bg-color-dark;
       }
 
       p:first-of-type {
@@ -454,7 +456,7 @@ body {
           font-weight: bold;
           width: 30px;
           height: 30px;
-          background-color: #2f5edf;
+          background-color: $button-dark-bg-color;
           border: none;
           border-radius: 50%;
           display: flex;
@@ -464,7 +466,8 @@ body {
           margin-bottom: 100px;
 
           &:hover {
-            background-color: #173eaa;
+            background-color: #000000;
+            transform: scale(105%);
           }
 
           p {
@@ -679,6 +682,10 @@ body {
 
       .right {
         margin-bottom: 50px;
+
+        a {
+          text-decoration: none;
+        }
       }
     }
   }
