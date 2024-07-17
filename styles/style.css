@@ -1,1 +1,597 @@
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes grow-shrink {
+  0%, 100% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(105%);
+  }
+}
+@keyframes grow-shrink-smaller {
+  0%, 100% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(102%);
+  }
+}
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
 
+body {
+  background-color: #1d1d1d;
+  font-family: "Roboto Slab", serif;
+  color: white;
+}
+body .navbar {
+  background-color: #111111;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  z-index: 2;
+  /* Would be better with flex and align-items: center */
+  /* Hide the links inside the navigation menu */
+  /* style for all the links in the navbar */
+}
+body .navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+body .navbar .logo-container p {
+  color: #818080;
+}
+body .navbar .logo-container img {
+  margin-left: 30px;
+  height: 80%;
+}
+body .navbar #my-links {
+  display: flex;
+  flex-direction: row;
+  margin-right: 30px;
+}
+body .navbar #hamburger-icon {
+  display: none;
+}
+body .navbar a {
+  color: #818080;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  padding-right: 20px;
+  line-height: 2rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: right;
+}
+body .navbar a:hover {
+  color: white;
+}
+body .navbar hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 1px;
+  background-color: rgb(168, 168, 168);
+  opacity: 50%;
+}
+@media (max-width: 768px) {
+  body .navbar {
+    height: 50px;
+    /* Styling the hamburger link */
+  }
+  body .navbar #my-links.show {
+    display: block;
+  }
+  body .navbar #hamburger-icon {
+    position: absolute;
+    padding-right: 10px;
+    top: 0;
+    right: 0;
+    width: 50px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+    display: block;
+  }
+  body .navbar #my-links {
+    background-color: #111111;
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin-right: 0;
+  }
+}
+@media (min-width: 769px) {
+  body .navbar .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body .navbar #my-links {
+    display: flex;
+    flex-direction: row;
+  }
+  body .navbar #hamburger-icon {
+    display: none;
+  }
+}
+body main {
+  display: flex;
+  flex-direction: column;
+}
+body main #home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  height: 570px; /* Need to fix height dinamically */
+  scroll-margin-top: 50px;
+  background: url("../resources/images/profile.png"), linear-gradient(45deg, #2c3e50, #4c677f);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+@media (min-width: 1201px) {
+  body main #home {
+    background-size: auto 100%;
+  }
+}
+@media (max-width: 1200px) {
+  body main #home {
+    background-size: auto 100%;
+  }
+}
+@media (max-width: 1024px) {
+  body main #home {
+    background-size: auto 100%;
+  }
+}
+@media (max-width: 768px) {
+  body main #home {
+    background-size: 100% auto;
+  }
+}
+body main #home .title {
+  font-size: 3rem;
+  color: #ffffff;
+  font-family: "Inconsolata", monospace;
+}
+body main #home .title span {
+  color: #008170;
+  font-weight: bolder;
+}
+body main #home .title span.blinking-cursor {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+@media (max-width: 768px) {
+  body main #home .title {
+    font-size: 1.5rem;
+  }
+}
+body main #about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222222;
+  padding: 20px;
+  scroll-margin-top: 50px;
+}
+body main #about h2 {
+  margin-top: 70px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 2rem;
+}
+body main #about hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 4px;
+  width: 20px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #2f5edf;
+}
+body main #about p:first-of-type {
+  text-align: center;
+  margin-bottom: 70px;
+  max-width: 550px;
+}
+body main #about .get-to-know-me h3 {
+  align-self: flex-start;
+}
+body main #about .get-to-know-me p {
+  text-align: left;
+  margin-bottom: 30px;
+}
+body main #about .get-to-know-me p span {
+  font-weight: bold;
+  color: #4c677f;
+}
+body main #about .get-to-know-me a {
+  background-color: #2f5edf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 150px;
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+body main #about .get-to-know-me a:hover {
+  background-color: #173eaa;
+  animation-name: grow-shrink;
+  animation-duration: 0.5s;
+}
+@media (max-width: 768px) {
+  body main #about .get-to-know-me a {
+    margin-bottom: 0;
+  }
+}
+body main #about .my-skills {
+  margin-bottom: 50px;
+}
+body main #about .my-skills h3 {
+  align-self: flex-start;
+  margin-top: 50px;
+}
+body main #about .my-skills .skills {
+  /* In landscape mode they take about 50% */
+  align-self: flex-start;
+  width: 80%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+body main #about .my-skills .skills div {
+  background-color: #e6e4e4;
+  color: rgb(102, 102, 102);
+  font-weight: bold;
+  font-size: 0.7rem;
+  padding: 1.3em;
+  border: none;
+  border-radius: 5px;
+}
+body main #about img {
+  height: 300px;
+}
+@media (min-width: 769px) {
+  body main #about .about-me-group {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  body main #about .get-to-know-me {
+    width: 25%;
+  }
+  body main #about .get-to-know-me h3 {
+    margin-top: 0;
+  }
+  body main #about .my-skills {
+    width: 25%;
+  }
+  body main #about .my-skills h3 {
+    margin-top: 0;
+  }
+}
+body main #projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  scroll-margin-top: 50px;
+  background: linear-gradient(45deg, #2c3e50, #4c677f);
+}
+body main #projects hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 4px;
+  width: 20px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #2f5edf;
+}
+body main #projects p:first-of-type {
+  margin-bottom: 70px;
+  text-align: center;
+}
+body main #projects .slideshow-container {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  /* Next and previous buttons */
+}
+body main #projects .slideshow-container .slide {
+  display: none;
+  gap: 20px;
+}
+body main #projects .slideshow-container .slide img {
+  width: 50%;
+}
+@media (max-width: 768px) {
+  body main #projects .slideshow-container .slide img {
+    width: 100%;
+  }
+}
+body main #projects .slideshow-container .slide .about-project {
+  width: 50%;
+}
+body main #projects .slideshow-container .slide .about-project span {
+  color: #6b6969;
+  opacity: 50%;
+}
+@media (max-width: 768px) {
+  body main #projects .slideshow-container .slide .about-project {
+    width: 100%;
+  }
+}
+body main #projects .slideshow-container .next,
+body main #projects .slideshow-container .previous {
+  flex: 0 0 30px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  background-color: #2f5edf;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+body main #projects .slideshow-container .next:hover,
+body main #projects .slideshow-container .previous:hover {
+  background-color: #173eaa;
+}
+body main #projects .slideshow-container .next p,
+body main #projects .slideshow-container .previous p {
+  margin: 0;
+}
+body main #projects .slideshow-container .fade {
+  animation-name: fadein;
+  animation-duration: 1.5s;
+}
+@media (max-width: 768px) {
+  body main #projects .slideshow-container {
+    justify-content: center;
+  }
+}
+body main #projects article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 100px;
+  max-width: 1200px;
+  gap: 50px;
+}
+body main #projects article img {
+  width: 50%;
+  margin-bottom: 40px;
+}
+body main #projects article .about-project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body main #projects article .about-project h3 {
+  margin-top: 0;
+}
+body main #projects article .about-project p {
+  text-align: left;
+  margin-bottom: 0;
+  line-height: 1.7rem;
+}
+body main #projects article button {
+  background-color: #2f5edf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 40px;
+  background-color: #1d1d1d;
+  width: 150px;
+  margin-top: 30px;
+}
+body main #projects article button:hover {
+  animation-name: grow-shrink;
+  animation-duration: 0.5s;
+  background-color: #111111;
+}
+@media (max-width: 768px) {
+  body main #projects article {
+    flex-direction: column;
+  }
+  body main #projects article img {
+    width: 100%;
+  }
+  body main #projects article .about-project {
+    align-items: center;
+  }
+  body main #projects article .about-project p {
+    text-align: center;
+  }
+}
+body main #contact {
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  scroll-margin-top: 50px;
+}
+body main #contact hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 4px;
+  width: 20px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #2f5edf;
+}
+body main #contact p {
+  text-align: center;
+  max-width: 550px;
+}
+body main #contact form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  width: 700px;
+  margin-bottom: 70px;
+}
+body main #contact form label {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #6b6969;
+}
+body main #contact form input,
+body main #contact form textarea {
+  background-color: #e6e4e4;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+body main #contact form textarea {
+  height: 180px;
+}
+body main #contact form button {
+  background-color: #2f5edf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 40px;
+  width: 100%;
+  height: 60px;
+}
+body main #contact form button:hover {
+  animation-name: grow-shrink-smaller;
+  animation-duration: 0.5s;
+  background-color: #173eaa;
+}
+@media (max-width: 768px) {
+  body main #contact form {
+    width: 80%;
+  }
+}
+body footer {
+  background-color: #111111;
+  color: white;
+  padding: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+body footer img {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+body footer h3 {
+  margin-top: 50px;
+}
+body footer p:first-of-type {
+  margin-bottom: 50px;
+}
+body footer hr {
+  border: none;
+  height: 1px;
+  background-color: #6b6969;
+  opacity: 70%;
+}
+body footer p:nth-of-type(2) {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+}
+body footer .footer-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body footer .left {
+  width: 40%;
+}
+body footer .right h3 {
+  margin-top: 0;
+}
+body footer .copyright {
+  text-align: center;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  body footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  body footer .footer-elements {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body footer .left {
+    width: 100%;
+  }
+  body footer .right {
+    margin-bottom: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */
