@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
   </head>
-  <body onload="autoCarousel()">
+  <body>
     <header>
       <div class="navbar">
         <div class="logo-container">
@@ -126,7 +126,9 @@
               alt="Paueek and Large Health Food Store Website"
             />
             <div class="about-project">
-              <h3>Paueek and Large Health Food Store <span>(PLACEHOLDER)</span></h3>
+              <h3>
+                Paueek and Large Health Food Store <span>(PLACEHOLDER)</span>
+              </h3>
               <p>
                 The Paieek and Large Healthfood Store website was designed to
                 reflect the company's commitment to organic, sustainable
@@ -151,6 +153,11 @@
             </div>
           </article>
           <div class="next" onclick="plusSlides(1)"><p>&#10095;</p></div>
+        </div>
+        <div class="dot-navigation-menu">
+          <div onclick="showSlides(0)"></div>
+          <div onclick="showSlides(1)"></div>
+          <div onclick="showSlides(2)"></div>
         </div>
       </section>
       <section id="contact">
@@ -212,7 +219,10 @@
     </footer>
     <script type="text/javascript" src="./scripts/main.js"></script>
     <script type="text/javascript" src="./scripts/carousel-main.js"></script>
-    <script type="text/javascript" src="./scripts/typewritter-effect.js"></script>
+    <script
+      type="text/javascript"
+      src="./scripts/typewritter-effect.js"
+    ></script>
     <script type="text/javascript" src="./scripts/touchscreen.js"></script>
   </body>
 </html>
