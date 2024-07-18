@@ -1,4 +1,4 @@
-import { plusSlides, slideNumber } from "./carousel-main";
+/* import { plusSlides, slideNumber } from "./carousel-main"; */
 
 let startX;
 let endX;
