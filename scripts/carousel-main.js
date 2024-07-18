@@ -36,4 +36,4 @@ function showSlides(slideIndex) {
   displayCurrentSlideDot(slideIndex);
 }
 
-export { plusSlides, slideNumber };
+/* export { plusSlides, slideNumber }; */
