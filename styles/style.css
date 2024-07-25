@@ -6,14 +6,6 @@
     opacity: 1;
   }
 }
-@keyframes fadein {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes grow-shrink {
   0%, 100% {
     transform: scale(100%);
@@ -30,6 +22,30 @@
     transform: scale(102%);
   }
 }
+@keyframes color-transition {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+@keyframes slide-right {
+  0% {
+    left: 105%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-left {
+  0% {
+    left: -105%;
+  }
+  100% {
+    left: 0;
+  }
+}
 html,
 body {
   margin: 0;
@@ -39,41 +55,148 @@ body {
 }
 
 body {
-  background-color: #1d1d1d;
+  background-color: #222222;
   font-family: "Roboto Slab", serif;
   color: white;
+  display: flex;
+  flex-direction: column;
+  /* Define all font sizes here */
+  /* Change font-size dinamically with media queries */
+}
+body h1 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 3rem;
+}
+body h2 {
+  font-size: 2rem;
+}
+body h3 {
+  font-size: 1.5rem;
+}
+body p,
+body a,
+body input,
+body textarea {
+  font-size: 0.9rem;
+}
+body label {
+  font-size: 0.8rem;
+}
+body button {
+  font-size: 0.9rem;
+}
+@media (min-width: 320px) {
+  body h1 {
+    font-size: 2.7rem;
+  }
+  body h2 {
+    font-size: 1.8rem;
+  }
+  body h3 {
+    font-size: 1.35rem;
+  }
+  body p,
+  body a,
+  body input,
+  body textarea {
+    font-size: 0.81rem;
+  }
+  body label {
+    font-size: 0.72rem;
+  }
+  body button {
+    font-size: 0.81rem;
+  }
+}
+@media (min-width: 961px) {
+  body h1 {
+    font-size: 2.85rem;
+  }
+  body h2 {
+    font-size: 1.9rem;
+  }
+  body h3 {
+    font-size: 1.425rem;
+  }
+  body p,
+  body a,
+  body input,
+  body textarea {
+    font-size: 0.855rem;
+  }
+  body label {
+    font-size: 0.76rem;
+  }
+  body button {
+    font-size: 0.855rem;
+  }
+}
+@media (min-width: 1281px) {
+  body h1 {
+    font-size: 3.15rem;
+  }
+  body h2 {
+    font-size: 2.1rem;
+  }
+  body h3 {
+    font-size: 1.575rem;
+  }
+  body p,
+  body a,
+  body input,
+  body textarea {
+    font-size: 0.945rem;
+  }
+  body label {
+    font-size: 0.84rem;
+  }
+  body button {
+    font-size: 0.945rem;
+  }
 }
 body .navbar {
   background-color: #111111;
   position: fixed;
-  width: 100%;
+  top: 0;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 4.375rem;
   z-index: 2;
-  /* Would be better with flex and align-items: center */
   /* Hide the links inside the navigation menu */
   /* style for all the links in the navbar */
 }
 body .navbar .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   height: 100%;
 }
 body .navbar .logo-container p {
   color: #818080;
 }
-body .navbar .logo-container img {
-  margin-left: 30px;
+body .navbar .logo-container a {
+  margin-top: 1rem;
+  margin-left: 1.25rem;
+  height: 100%;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  body .navbar .logo-container a {
+    margin-top: 0.75rem;
+  }
+}
+body .navbar .logo-container a img {
   height: 80%;
 }
 body .navbar #my-links {
   display: flex;
   flex-direction: row;
-  margin-right: 30px;
+  margin-right: 1.35rem;
 }
 body .navbar #hamburger-icon {
   display: none;
@@ -82,39 +205,40 @@ body .navbar a {
   color: #818080;
   text-decoration: none;
   display: block;
-  padding: 10px;
-  padding-right: 20px;
+  padding: 0.625rem;
+  padding-right: 1.25rem;
   line-height: 2rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: bold;
   text-align: right;
 }
 body .navbar a:hover {
   color: white;
 }
+body .navbar a:active {
+  color: #4c677f;
+}
 body .navbar hr {
   margin: 0;
   padding: 0;
   border: none;
-  height: 1px;
+  height: 0.06rem;
   background-color: rgb(168, 168, 168);
   opacity: 50%;
 }
 @media (max-width: 768px) {
   body .navbar {
-    height: 50px;
-    /* Styling the hamburger link */
+    height: 3.125rem;
   }
   body .navbar #my-links.show {
     display: block;
   }
   body .navbar #hamburger-icon {
     position: absolute;
-    padding-right: 10px;
-    top: 0;
+    padding-right: 0.625rem;
     right: 0;
-    width: 50px;
-    font-size: 1.5rem;
+    width: 3.125rem;
+    font-size: 1.4rem;
     font-weight: 100;
     text-align: center;
     display: block;
@@ -124,29 +248,16 @@ body .navbar hr {
     display: none;
     width: 100%;
     position: absolute;
-    top: 50px;
-    right: 0;
-    margin-right: 0;
+    top: 3.125rem;
   }
-}
-@media (min-width: 769px) {
-  body .navbar .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  body .navbar #my-links {
-    display: flex;
-    flex-direction: row;
-  }
-  body .navbar #hamburger-icon {
-    display: none;
+  body .navbar #my-links a {
+    padding-right: 1.5rem;
   }
 }
 body main {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 body main #home {
   display: flex;
@@ -154,38 +265,19 @@ body main #home {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 50px;
-  padding: 20px;
-  height: 570px; /* Need to fix height dinamically */
-  scroll-margin-top: 50px;
+  margin-top: 3.2rem;
+  padding: 1.25em;
+  min-height: 35rem;
+  overflow-anchor: none; /* Prevents scrolling due to element content change */
+  scroll-margin-top: 3rem;
   background: url("../resources/images/profile.png"), linear-gradient(45deg, #2c3e50, #4c677f);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
-}
-@media (min-width: 1201px) {
-  body main #home {
-    background-size: auto 100%;
-  }
-}
-@media (max-width: 1200px) {
-  body main #home {
-    background-size: auto 100%;
-  }
-}
-@media (max-width: 1024px) {
-  body main #home {
-    background-size: auto 100%;
-  }
-}
-@media (max-width: 768px) {
-  body main #home {
-    background-size: 100% auto;
-  }
+  flex: 1;
 }
 body main #home .title {
-  font-size: 3rem;
   color: #ffffff;
   font-family: "Inconsolata", monospace;
 }
@@ -198,148 +290,154 @@ body main #home .title span.blinking-cursor {
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
 }
-@media (max-width: 768px) {
-  body main #home .title {
-    font-size: 1.5rem;
-  }
-}
 body main #about {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #222222;
-  padding: 20px;
-  scroll-margin-top: 50px;
+  padding: 2em;
+  scroll-margin-top: 3rem;
+  flex: 1;
 }
 body main #about h2 {
-  margin-top: 70px;
-  margin-bottom: 15px;
+  margin-top: 4.375rem;
+  margin-bottom: 0.938rem;
   text-align: center;
-  font-size: 2rem;
 }
 body main #about hr {
   margin: 0;
   padding: 0;
   border: none;
-  height: 4px;
-  width: 20px;
+  height: 0.25rem;
+  width: 1.25rem;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 0.5em;
   background-color: #4c677f;
 }
 body main #about p:first-of-type {
   text-align: center;
-  margin-bottom: 70px;
-  max-width: 550px;
+  margin-bottom: 4.375rem;
+  max-width: 34rem;
 }
-body main #about .get-to-know-me h3 {
+body main #about .about-me-group {
+  display: flex;
+  justify-content: center;
+  max-width: 100rem;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  body main #about .about-me-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+body main #about .about-me-group .get-to-know-me {
+  flex-basis: 60%;
+}
+body main #about .about-me-group .get-to-know-me h3 {
   align-self: flex-start;
 }
-body main #about .get-to-know-me p {
-  text-align: left;
-  margin-bottom: 30px;
+body main #about .about-me-group .get-to-know-me p {
+  text-align: justify;
+  margin-bottom: 1.875rem;
 }
-body main #about .get-to-know-me p span {
+body main #about .about-me-group .get-to-know-me p span {
   font-weight: bold;
   color: #4c677f;
 }
-body main #about .get-to-know-me a {
+body main #about .about-me-group .get-to-know-me a {
   background-color: #4c677f;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
   font-size: 0.9rem;
   font-weight: bold;
-  height: 40px;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 150px;
+  width: 9.375rem;
   align-self: flex-start;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
-body main #about .get-to-know-me a:hover {
+body main #about .about-me-group .get-to-know-me a:active {
+  box-shadow: inset 0.125em 0.125em 0.125em #302f2f;
+}
+body main #about .about-me-group .get-to-know-me a:hover {
   background-color: #314e68;
   animation-name: grow-shrink;
   animation-duration: 0.5s;
 }
 @media (max-width: 768px) {
-  body main #about .get-to-know-me a {
+  body main #about .about-me-group .get-to-know-me a {
     margin-bottom: 0;
   }
 }
-body main #about .my-skills {
+body main #about .about-me-group .my-skills {
   margin-bottom: 50px;
+  flex-basis: 40%;
 }
-body main #about .my-skills h3 {
+body main #about .about-me-group .my-skills h3 {
   align-self: flex-start;
-  margin-top: 50px;
 }
-body main #about .my-skills .skills {
-  /* In landscape mode they take about 50% */
+body main #about .about-me-group .my-skills .skills {
   align-self: flex-start;
   width: 80%;
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
-body main #about .my-skills .skills div {
+body main #about .about-me-group .my-skills .skills div {
   background-color: #e6e4e4;
   color: rgb(102, 102, 102);
   font-weight: bold;
-  font-size: 0.7rem;
-  padding: 1.3em;
+  font-size: 0.9rem;
+  padding: 1em;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
 }
-body main #about img {
-  height: 300px;
+body main #about .about-me-group .my-skills .skills div:hover {
+  background-color: #4c677f;
+  color: #ffffff;
 }
-@media (min-width: 769px) {
-  body main #about .about-me-group {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-  }
-  body main #about .get-to-know-me {
-    width: 25%;
-  }
-  body main #about .get-to-know-me h3 {
-    margin-top: 0;
-  }
-  body main #about .my-skills {
-    width: 25%;
-  }
-  body main #about .my-skills h3 {
-    margin-top: 0;
+@media (max-width: 768px) {
+  body main #about .about-me-group .my-skills {
+    flex-basis: 50%;
   }
 }
 body main #projects {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  scroll-margin-top: 50px;
+  padding: 1.25em;
+  scroll-margin-top: 3rem;
   background: linear-gradient(45deg, #2c3e50, #4c677f);
+  flex: 1;
 }
 body main #projects hr {
   margin: 0;
   padding: 0;
   border: none;
-  height: 4px;
-  width: 20px;
+  height: 0.25rem;
+  width: 1.25rem;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 0.5em;
   background-color: #4c677f;
   background-color: #1d1d1d;
 }
-body main #projects p:first-of-type {
-  margin-bottom: 70px;
+body main #projects p {
+  margin-bottom: 4.375rem;
   text-align: center;
+}
+body main #projects .about-project > p {
+  text-align: left;
 }
 body main #projects .slideshow-container {
   max-width: 100%;
@@ -347,14 +445,21 @@ body main #projects .slideshow-container {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  overflow-anchor: none;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  position: relative;
+  /* Another fail by sass compiler, cannot nest these classes inside .slide */
   /* Next and previous buttons */
 }
 body main #projects .slideshow-container .slide {
   display: none;
-  gap: 20px;
+  position: relative;
+  gap: 1.25rem;
+}
+body main #projects .slideshow-container .slide:first-of-type {
+  display: flex;
 }
 body main #projects .slideshow-container .slide img {
   width: 50%;
@@ -375,22 +480,30 @@ body main #projects .slideshow-container .slide .about-project span {
   body main #projects .slideshow-container .slide .about-project {
     width: 100%;
   }
+  body main #projects .slideshow-container .slide .about-project p {
+    text-align: center;
+  }
+}
+body main #projects .slideshow-container .slide-left {
+  animation: 0.5s slide-left;
+}
+body main #projects .slideshow-container .slide-right {
+  animation: 0.5s slide-right;
 }
 body main #projects .slideshow-container .next,
 body main #projects .slideshow-container .previous {
-  flex: 0 0 30px;
+  flex: 0 0 1.875rem;
   cursor: pointer;
   font-weight: bold;
-  width: 30px;
-  height: 30px;
+  padding: 0.475em 0.3rem;
   background-color: #1d1d1d;
   border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
-  margin-bottom: 100px;
+  margin: 1.25rem;
+  z-index: 2;
 }
 body main #projects .slideshow-container .next:hover,
 body main #projects .slideshow-container .previous:hover {
@@ -401,6 +514,12 @@ body main #projects .slideshow-container .next p,
 body main #projects .slideshow-container .previous p {
   margin: 0;
 }
+@media (max-width: 768px) {
+  body main #projects .slideshow-container .next,
+  body main #projects .slideshow-container .previous {
+    display: none;
+  }
+}
 body main #projects .slideshow-container .fade {
   animation-name: fadein;
   animation-duration: 1.5s;
@@ -410,60 +529,93 @@ body main #projects .slideshow-container .fade {
     justify-content: center;
   }
 }
-body main #projects article {
+body main article {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 100px;
-  max-width: 1200px;
-  gap: 50px;
+  margin-bottom: 30px;
+  max-width: 75rem;
 }
-body main #projects article img {
+body main article img {
   width: 50%;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
-body main #projects article .about-project {
+body main article .about-project {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-body main #projects article .about-project h3 {
+body main article .about-project h3 {
   margin-top: 0;
 }
-body main #projects article .about-project p {
-  text-align: left;
+body main article .about-project p {
   margin-bottom: 0;
   line-height: 1.7rem;
 }
-body main #projects article button {
+body main article button {
   background-color: #4c677f;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
   font-size: 0.9rem;
   font-weight: bold;
-  height: 40px;
+  padding: 1em;
   background-color: #1d1d1d;
-  width: 150px;
-  margin-top: 30px;
+  padding: 1em 1.6em;
 }
-body main #projects article button:hover {
+body main article button:active {
+  box-shadow: inset 0.125em 0.125em 0.125em #302f2f;
+}
+body main article button:hover {
   animation-name: grow-shrink;
   animation-duration: 0.5s;
   background-color: #111111;
 }
+body main article button:active {
+  box-shadow: inset 0.125em 0.125em 0.125em #364a5c;
+}
 @media (max-width: 768px) {
-  body main #projects article {
+  body main article {
     flex-direction: column;
   }
-  body main #projects article img {
+  body main article img {
     width: 100%;
   }
-  body main #projects article .about-project {
+  body main article .about-project {
     align-items: center;
   }
-  body main #projects article .about-project p {
+  body main article .about-project p {
     text-align: center;
+  }
+}
+body main .dot-navigation-menu {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  align-items: center;
+  gap: 0.938rem;
+  margin-bottom: 3.125rem;
+  /* The Sass Compiler creates an incorrect selector so I can't nest this into the div selector above */
+}
+body main .dot-navigation-menu div {
+  min-width: 1.875rem;
+  min-height: 1.875rem;
+  background-color: transparent;
+  opacity: 50%;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body main .dot-navigation-menu .color-transition {
+  animation: color-transition 1s forwards;
+}
+@media (max-width: 768px) {
+  body main .dot-navigation-menu {
+    display: none;
   }
 }
 body main #contact {
@@ -471,17 +623,18 @@ body main #contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  scroll-margin-top: 50px;
+  padding: 1.25rem;
+  scroll-margin-top: 3rem;
+  flex: 1;
 }
 body main #contact hr {
   margin: 0;
   padding: 0;
   border: none;
-  height: 4px;
-  width: 20px;
+  height: 0.25rem;
+  width: 1.25rem;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 0.5em;
   background-color: #4c677f;
 }
 body main #contact p {
@@ -492,14 +645,13 @@ body main #contact form {
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-radius: 5px;
-  padding: 30px;
-  width: 700px;
-  margin-bottom: 70px;
+  border-radius: 0.5rem;
+  padding: 1.875em;
+  width: 43.75rem;
+  margin-bottom: 4.375rem;
 }
 body main #contact form label {
-  margin-bottom: 10px;
-  font-size: 0.8rem;
+  margin-bottom: 0.725em;
   font-weight: bold;
   color: #6b6969;
 }
@@ -507,30 +659,42 @@ body main #contact form input,
 body main #contact form textarea {
   background-color: #e6e4e4;
   border: none;
-  border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 20px;
-  font-size: 0.8rem;
+  border-radius: 0.5em;
+  padding: 1.35em;
+  margin-bottom: 1.25rem;
   font-weight: bold;
+  font-family: inherit;
+  outline-color: #4c677f;
 }
 body main #contact form textarea {
-  height: 180px;
+  height: 11.25em;
+  resize: none;
 }
 body main #contact form button {
   background-color: #4c677f;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
   font-size: 0.9rem;
   font-weight: bold;
-  height: 40px;
+  padding: 1em;
   width: 100%;
-  height: 60px;
+  padding: 1.375em;
+}
+body main #contact form button:active {
+  box-shadow: inset 0.125em 0.125em 0.125em #302f2f;
 }
 body main #contact form button:hover {
   animation-name: grow-shrink-smaller;
   animation-duration: 0.5s;
   background-color: #314e68;
+}
+body main #contact form button:active {
+  box-shadow: inset 0.15em 0.15em 0.15em #302f2f;
 }
 @media (max-width: 768px) {
   body main #contact form {
@@ -540,63 +704,62 @@ body main #contact form button:hover {
 body footer {
   background-color: #111111;
   color: white;
-  padding: 20px;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
 }
-body footer img {
+body footer .footer-content {
+  max-width: 100rem;
+}
+body footer .footer-content img {
   width: 20px;
   height: 20px;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
-body footer h3 {
-  margin-top: 50px;
+body footer .footer-content h3 {
+  margin-top: 3.125rem;
 }
-body footer p:first-of-type {
-  margin-bottom: 50px;
+body footer .footer-content p:first-of-type {
+  margin-bottom: 3.125rem;
 }
-body footer hr {
+body footer .footer-content hr {
   border: none;
   height: 1px;
   background-color: #6b6969;
   opacity: 70%;
 }
-body footer p:nth-of-type(2) {
-  padding: 20px;
+body footer .footer-content p:nth-of-type(2) {
+  padding: 1.25em;
   text-align: center;
-  font-size: 0.7rem;
 }
-body footer .footer-elements {
+body footer .footer-content .footer-elements {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
-body footer .left {
+body footer .footer-content .left {
   width: 40%;
 }
-body footer .right h3 {
-  margin-top: 0;
-}
-body footer .copyright {
+body footer .footer-content .copyright {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 1.875rem;
 }
 @media (max-width: 768px) {
-  body footer {
-    padding-left: 20px;
-    padding-right: 20px;
+  body footer .footer-content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
-  body footer .footer-elements {
+  body footer .footer-content .footer-elements {
     flex-direction: column;
     align-items: flex-start;
   }
-  body footer .left {
+  body footer .footer-content .left {
     width: 100%;
   }
-  body footer .right {
-    margin-bottom: 50px;
+  body footer .footer-content .right {
+    margin-bottom: 3.125rem;
   }
-  body footer .right a {
-    text-decoration: none;
-  }
+}
+body footer .footer-content .right a {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
