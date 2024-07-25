@@ -20,26 +20,20 @@
     <header>
       <div class="navbar">
         <div class="logo-container">
-          <img src="./resources/images/logo.png" class="logo" />
+          <a href="#contact"><img src="./resources/images/logo.png" class="logo" /></a>
           <p>Rastko Jović</p>
         </div>
-        <!-- Replace with actual logo -->
         <div id="my-links">
           <hr />
-          <a href="#home" onclick="toggleHamburgerMenu()">Home</a>
+          <a href="#home">Home</a>
           <hr />
-          <a href="#about" onclick="toggleHamburgerMenu()">About</a>
+          <a href="#about">About</a>
           <hr />
-          <a href="#projects" onclick="toggleHamburgerMenu()">Projects</a>
+          <a href="#projects">Projects</a>
           <hr />
-          <a href="#contact" onclick="toggleHamburgerMenu()">Contact</a>
+          <a href="#contact">Contact</a>
         </div>
-        <a
-          href="javascript:void(0);"
-          id="hamburger-icon"
-          onclick="toggleHamburgerMenu()"
-          >☰</a
-        >
+        <a href="javascript:void(0);" id="hamburger-icon">☰</a>
       </div>
     </header>
     <main>
@@ -56,7 +50,6 @@
           Focused on Creating Responsive and User-Friendly Websites
         </p>
         <div class="about-me-group">
-          <!-- <img src="./resources/images/profile.png"> -->
           <div class="get-to-know-me">
             <h3>Get to know me!</h3>
             <p>
@@ -104,8 +97,8 @@
         </p>
 
         <div class="slideshow-container">
-          <div class="previous" onclick="plusSlides(-1)"><p>&#10094;</p></div>
-          <article class="fauget-furniture slide fade">
+          <div class="previous"><p>&#10094;</p></div>
+          <article class="fauget-furniture slide">
             <img
               src="./resources/images/furniture store.png"
               alt="Fauget Furniture Store Website"
@@ -120,7 +113,7 @@
               <button type="button">LIVE DEMO</button>
             </div>
           </article>
-          <article class="paueek-health-food slide fade">
+          <article class="paueek-health-food slide">
             <img
               src="./resources/images/health food store.png"
               alt="Paueek and Large Health Food Store Website"
@@ -137,7 +130,7 @@
               <button type="button">LIVE DEMO</button>
             </div>
           </article>
-          <article class="manes-winchester-lawfirm slide fade">
+          <article class="manes-winchester-lawfirm slide">
             <img
               src="./resources/images/law firm.png"
               alt="Manes Winchester Lawfirm Website"
@@ -152,12 +145,12 @@
               <button type="button">LIVE DEMO</button>
             </div>
           </article>
-          <div class="next" onclick="plusSlides(1)"><p>&#10095;</p></div>
+          <div class="next"><p>&#10095;</p></div>
         </div>
         <div class="dot-navigation-menu">
-          <div onclick="showSlides(0)"></div>
-          <div onclick="showSlides(1)"></div>
-          <div onclick="showSlides(2)"></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </section>
       <section id="contact">
@@ -183,46 +176,42 @@
       </section>
     </main>
     <footer>
-      <div class="footer-elements">
-        <div class="left">
-          <h3>RASTKO JOVIĆ</h3>
-          <p>
-            I'm a Frontend Web Developer specializing in crafting engaging and
-            effective user interfaces for websites and web applications. My
-            focus is on creating seamless frontend experiences that contribute
-            significantly to the overall success of digital products.
-          </p>
+      <div class="footer-content">
+        <div class="footer-elements">
+          <div class="left">
+            <h3>RASTKO JOVIĆ</h3>
+            <p>
+              I'm a Frontend Web Developer specializing in crafting engaging and
+              effective user interfaces for websites and web applications. My
+              focus is on creating seamless frontend experiences that contribute
+              significantly to the overall success of digital products.
+            </p>
+          </div>
+          <div class="right">
+            <h3>SOCIAL</h3>
+            <a href="https://www.linkedin.com/in/rastko-jovic/" class="socials">
+              <img
+                src="./resources/icons/linkedin-icon.png"
+                alt="LinkedIn Logo"
+              /> </a
+            ><a href="https://github.com/rastkojovic" class="socials">
+              <img
+                src="./resources/icons/github-icon.png"
+                alt="GitHub Logo"
+              /> </a
+            ><a href="https://x.com/jovic_rastko" class="socials">
+              <img
+                src="./resources/icons/twitter-icon.png"
+                alt="Twitter Logo"
+              />
+            </a>
+          </div>
         </div>
-        <div class="right">
-          <h3>SOCIAL</h3>
-          <a href="https://www.linkedin.com/in/rastko-jovic/">
-            <img
-              src="./resources/icons/icons8-linkedin-250-white.png"
-              alt="LinkedIn Logo"
-            /> </a
-          ><a href="https://github.com/rastkojovic">
-            <img
-              src="./resources/icons/icons8-github-256-white.png"
-              alt="GitHub Logo"
-            /> </a
-          ><a href="https://x.com/jovic_rastko">
-            <img
-              src="./resources/icons/icons8-twitter-logo-250.png"
-              alt="Twitter Logo"
-            />
-          </a>
-        </div>
+  
+        <hr />
+        <p class="copyright">&copy; Copyright 2024. Made by Rastko Jović</p>
       </div>
-
-      <hr />
-      <p class="copyright">&copy; Copyright 2024. Made by Rastko Jović</p>
     </footer>
-    <script type="text/javascript" src="./scripts/main.js"></script>
-    <script type="text/javascript" src="./scripts/carousel-main.js"></script>
-    <script
-      type="text/javascript"
-      src="./scripts/typewritter-effect.js"
-    ></script>
-    <script type="text/javascript" src="./scripts/touchscreen.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
