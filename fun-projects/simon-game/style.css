@@ -165,7 +165,7 @@ footer a {
 }
 
 /* Laptop */
-@media (max-width: 100em) {
+@media (max-width: 120em) {
    h1 {
       margin-top: calc(6rem * var(--laptop-size-multiplier));
       font-size: calc(3rem * var(--laptop-size-multiplier));
