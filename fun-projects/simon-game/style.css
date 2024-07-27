@@ -1,0 +1,168 @@
+:root {
+  --background-color: #03346e;
+  --box-border-color: #000000;
+  --box1-background-color: green;
+  --box1-background-hover-color: rgb(0, 168, 0);
+  --box2-background-color: red;
+  --box2-background-hover-color: rgb(253, 63, 63);
+  --box3-background-color: yellow;
+  --box3-background-hover-color: rgb(250, 250, 132);
+  --box4-background-color: blue;
+  --box4-background-hover-color: rgb(45, 45, 255);
+  --h1-color: #ffffff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+    border-color: var(--box-border-color);
+  }
+  50% {
+    opacity: 0.8;
+    border-color: #ffffff;
+  }
+  100% {
+    opacity: 1;
+    border-color: var(--box-border-color);
+  }
+}
+
+@keyframes color-transition {
+  0% {
+    background-color: var(--background-color);
+  }
+  25% {
+    background-color: red;
+  }
+  50% {
+    background-color: var(--background-color);
+  }
+  75% {
+    background-color: red;
+  }
+  100% {
+    background-color: var(--background-color);
+  }
+}
+
+@keyframes blinking-animation {
+  0% {
+    color: red;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Press Start 2P", system-ui;
+  color: var(--h1-color);
+  text-align: center;
+  margin-top: 6rem;
+  user-select: none;
+}
+
+h1 strong {
+  color: red;
+  animation-name: blinking-animation;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 30rem;
+  height: 30rem;
+}
+
+.box {
+  border: 0.6rem solid var(--box-border-color);
+  border-radius: 100% 0 0 0;
+  width: 13rem;
+  height: 13rem;
+}
+
+.fadein {
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+}
+
+.color-transition {
+  animation-name: color-transition;
+  animation-duration: 0.8s;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.box:nth-child(1) {
+  background-color: var(--box1-background-color);
+  border-radius: 100% 0 0 0;
+}
+
+.box:nth-child(1):hover {
+  background-color: var(--box1-background-hover-color);
+}
+
+.box:nth-child(2) {
+  background-color: var(--box2-background-color);
+  border-radius: 0 100% 0 0;
+}
+
+.box:nth-child(2):hover {
+  background-color: var(--box2-background-hover-color);
+}
+
+.box:nth-child(3) {
+  background-color: var(--box3-background-color);
+  border-radius: 0 0 0 100%;
+}
+
+.box:nth-child(3):hover {
+  background-color: var(--box3-background-hover-color);
+}
+
+.box:nth-child(4) {
+  background-color: var(--box4-background-color);
+  border-radius: 0 0 100% 0;
+}
+
+.box:nth-child(4):hover {
+  background-color: var(--box4-background-hover-color);
+}
+
+footer {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: 900;
+    font-style: italic;
+    color: #FFFFFF;
+}
+
+footer a:hover {
+    color: rgb(27, 141, 216);
+}
