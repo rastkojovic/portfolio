@@ -10,6 +10,7 @@
   --box4-background-color: blue;
   --box4-background-hover-color: rgb(45, 45, 255);
   --h1-color: #ffffff;
+  --laptop-size-multiplier: 0.7;
 }
 
 @keyframes fadeIn {
@@ -161,6 +162,26 @@ footer a {
     font-weight: 900;
     font-style: italic;
     color: #FFFFFF;
+}
+
+/* Laptop */
+@media (max-width: 100em) {
+   h1 {
+      margin-top: calc(6rem * var(--laptop-size-multiplier));
+      font-size: calc(3rem * var(--laptop-size-multiplier));
+   }
+
+   .container {
+     gap: calc(1.5rem * var(--laptop-size-multiplier));
+     width: calc(30rem * var(--laptop-size-multiplier));
+     height: calc(30rem * var(--laptop-size-multiplier));
+   }
+
+   .box {
+     border-width: calc(0.6rem * var(--laptop-size-multiplier));
+     width: calc(13rem * var(--laptop-size-multiplier));
+     height: calc(13rem * var(--laptop-size-multiplier));
+   }
 }
 
 footer a:hover {
