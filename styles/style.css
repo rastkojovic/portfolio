@@ -166,7 +166,7 @@ body .navbar {
   justify-content: space-between;
   align-items: center;
   height: 4.375rem;
-  z-index: 2;
+  z-index: 99;
   /* Hide the links inside the navigation menu */
   /* style for all the links in the navbar */
 }
